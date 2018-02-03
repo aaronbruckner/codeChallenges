@@ -57,12 +57,11 @@ Array of the size roadRegister.length, with each of its elements of size (roadRe
 */
 function financialCrisis(roadRegister) {
     let modifiedRoadRegister = [];
-    for (let cityToRemove = 0; cityToRemove < roadRegister.length; cityToRemove++) {
-        let roadRegWithoutCity = roadRegister.slice(0, cityToRemove).concat(roadRegister.slice(cityToRemove + 1));
-        for (let i = 0; i < roadRegWithoutCity.length; i++) {
-            let cityRoads = roadRegWithoutCity[i];
-            roadRegWithoutCity[i] = cityRoads.slice(0, cityToRemove).concat(cityRoads.slice(cityToRemove + 1));
-        }
+    for (let city = 0; city < roadRegister.length; city++) {
+        let roadRegWithoutCity = roadRegister.slice(0, city).concat(roadRegister.slice(city + 1));
+        roadRegWithoutCity = roadRegWithoutCity.map((cityRoads) => {
+            return cityRoads.slice(0, city).concat(cityRoads.slice(city + 1));
+        });
         modifiedRoadRegister.push(roadRegWithoutCity);
     }
     return modifiedRoadRegister;
