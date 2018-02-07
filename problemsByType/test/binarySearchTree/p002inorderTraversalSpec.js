@@ -4,16 +4,16 @@ const it = mocha.it;
 const assert = require('chai').assert;
 
 const Node = require('../../src/binarySearchTree/Node.js');
-const preorderTraversal = require('../../src/binarySearchTree/p101preorderTraversal.js');
+const inorderTraversal = require('../../src/binarySearchTree/p002inorderTraversal.js');
 
-describe('preorderTraversal', () => {
+describe('inorderTraversal', () => {
 
   it('should return an array', () =>{
-    assert.isArray(preorderTraversal(new Node(10)));
+    assert.isArray(inorderTraversal(new Node(10)));
   });
 
   it('should return an empty array if node is invalid', () =>{
-    assert.deepEqual(preorderTraversal(null), []);
+    assert.deepEqual(inorderTraversal(null), []);
   });
 
   describe('scenarios', () => {
@@ -22,21 +22,21 @@ describe('preorderTraversal', () => {
       let root = new Node(10);
       let expectedOrder = [10];
 
-      assert.deepEqual(preorderTraversal(root), expectedOrder);
+      assert.deepEqual(inorderTraversal(root), expectedOrder);
     });
 
     it('root node with just a left child', () => {
       let root = new Node(10, new Node(5));
-      let expectedOrder = [10, 5];
+      let expectedOrder = [5, 10];
 
-      assert.deepEqual(preorderTraversal(root), expectedOrder);
+      assert.deepEqual(inorderTraversal(root), expectedOrder);
     });
 
     it('root node with just a right child', () => {
       let root = new Node(10, null, new Node(15));
       let expectedOrder = [10, 15];
 
-      assert.deepEqual(preorderTraversal(root), expectedOrder);
+      assert.deepEqual(inorderTraversal(root), expectedOrder);
     });
 
     it('root node with many children and grandchildren', () => {
@@ -55,8 +55,8 @@ describe('preorderTraversal', () => {
       root.right.left = new Node(13);
       root.right.left.right = new Node(14);
 
-      let expectedOrder = [10, 5, 5, 3, 7, 8, 15, 13, 14, 20];
-      assert.deepEqual(preorderTraversal(root), expectedOrder);
+      let expectedOrder = [3, 5, 5, 7, 8, 10, 13, 14, 15, 20];
+      assert.deepEqual(inorderTraversal(root), expectedOrder);
     });
 
   });

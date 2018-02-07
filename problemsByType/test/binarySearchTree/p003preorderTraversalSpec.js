@@ -4,16 +4,16 @@ const it = mocha.it;
 const assert = require('chai').assert;
 
 const Node = require('../../src/binarySearchTree/Node.js');
-const inorderTraversal = require('../../src/binarySearchTree/p100inorderTraversal.js');
+const preorderTraversal = require('../../src/binarySearchTree/p003preorderTraversal.js');
 
-describe('inorderTraversal', () => {
+describe('preorderTraversal', () => {
 
   it('should return an array', () =>{
-    assert.isArray(inorderTraversal(new Node(10)));
+    assert.isArray(preorderTraversal(new Node(10)));
   });
 
   it('should return an empty array if node is invalid', () =>{
-    assert.deepEqual(inorderTraversal(null), []);
+    assert.deepEqual(preorderTraversal(null), []);
   });
 
   describe('scenarios', () => {
@@ -22,21 +22,21 @@ describe('inorderTraversal', () => {
       let root = new Node(10);
       let expectedOrder = [10];
 
-      assert.deepEqual(inorderTraversal(root), expectedOrder);
+      assert.deepEqual(preorderTraversal(root), expectedOrder);
     });
 
     it('root node with just a left child', () => {
       let root = new Node(10, new Node(5));
-      let expectedOrder = [5, 10];
+      let expectedOrder = [10, 5];
 
-      assert.deepEqual(inorderTraversal(root), expectedOrder);
+      assert.deepEqual(preorderTraversal(root), expectedOrder);
     });
 
     it('root node with just a right child', () => {
       let root = new Node(10, null, new Node(15));
       let expectedOrder = [10, 15];
 
-      assert.deepEqual(inorderTraversal(root), expectedOrder);
+      assert.deepEqual(preorderTraversal(root), expectedOrder);
     });
 
     it('root node with many children and grandchildren', () => {
@@ -55,8 +55,8 @@ describe('inorderTraversal', () => {
       root.right.left = new Node(13);
       root.right.left.right = new Node(14);
 
-      let expectedOrder = [3, 5, 5, 7, 8, 10, 13, 14, 15, 20];
-      assert.deepEqual(inorderTraversal(root), expectedOrder);
+      let expectedOrder = [10, 5, 5, 3, 7, 8, 15, 13, 14, 20];
+      assert.deepEqual(preorderTraversal(root), expectedOrder);
     });
 
   });

@@ -4,7 +4,7 @@ const it = mocha.it;
 const assert = require('chai').assert;
 
 const Node = require('../../src/binarySearchTree/Node.js');
-const postorderTraversal = require('../../src/binarySearchTree/p102postorderTraversal.js');
+const postorderTraversal = require('../../src/binarySearchTree/p004postorderTraversal.js');
 
 describe('postorderTraversal', () => {
 
