@@ -19,12 +19,19 @@ function iterative(root, value) {
 /**
 * BST search using a recursive method.
 *
-* @param root - the root of the BST.
+* @param node - the root of the BST.
 * @param value - the value searched for.
 * @returns {Node} - the inorder node that contains the value in the BST, otherwise null.
 */
-function recursive(root, value) {
+function recursive(node, value) {
+  if (!node) {
+    return null;
+  }
+  if (node.value === value && !(node.left && node.left.value === value)) {
+    return node;
+  }
 
+  return recursive((value <= node.value ? node.left : node.right), value);
 }
 
 module.exports.iterative = iterative;
