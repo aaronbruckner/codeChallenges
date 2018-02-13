@@ -3,7 +3,7 @@ const describe = mocha.describe;
 const it = mocha.it;
 const assert = require('chai').assert;
 
-const Node = require('../../src/binarySearchTree/Node.js');
+const Node = require('../../src/Node.js');
 const inorderTraversal = require('../../src/binarySearchTree/p002inorderTraversal.js');
 
 describe('inorderTraversal', () => {

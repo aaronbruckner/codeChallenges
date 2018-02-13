@@ -3,7 +3,7 @@ const describe = mocha.describe;
 const it = mocha.it;
 const assert = require('chai').assert;
 
-const Node = require('../../src/binarySearchTree/Node.js');
+const Node = require('../../src/Node.js');
 const BSTSearch = require('../../src/binarySearchTree/p006BSTSearch.js');
 
 describe('BSTSearch', () => {
