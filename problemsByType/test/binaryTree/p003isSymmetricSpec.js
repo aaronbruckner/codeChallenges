@@ -27,11 +27,11 @@ describe('isSymmetric', () => {
     it('a tree with multiple children that is symmetric', () => {
       //              10
       //     5                  5
-      //  2     7           2       7
-      //      8                   8
+      //  2     7            7      2
+      //      8                8
       let root = new Node(10);
       root.left = new Node(5, new Node(2), new Node(7, new Node(8)));
-      root.right = new Node(5, new Node(2), new Node(7, new Node(8)));
+      root.right = new Node(5, new Node(7, null, new Node(8)), new Node(2));
 
       assert.isTrue(isSymmetric(root));
     });
