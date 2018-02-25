@@ -9,18 +9,15 @@ function isSymmetricWrapper(root) {
   return isSymmetric(root.left, root.right);
 }
 
-function isSymmetric(leftNode, rightNode) {
-  if (!leftNode && !rightNode) {
+function isSymmetric(a, b) {
+  if (!a && !b) {
     return true;
   }
-  if ((!leftNode && rightNode) || (!rightNode && leftNode)) {
-    return false;
-  }
-  if (leftNode.value !== rightNode.value) {
+  if (!a || !b || a.value !== b.value) {
     return false;
   }
 
-  return isSymmetric(leftNode.left, rightNode.left) && isSymmetric(leftNode.right, rightNode.right);
+  return isSymmetric(a.left, b.right) && isSymmetric(a.right, b.left);
 }
 
 module.exports = isSymmetricWrapper;
