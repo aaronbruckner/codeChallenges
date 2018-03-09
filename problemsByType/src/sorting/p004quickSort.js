@@ -6,10 +6,13 @@ function quickSort(array) {
     let wall = start;
     let pivot = array[end];
     for (let i = start; i < end; i++) {
-      if (array[start + i] < pivot) {
-        swap(start + i, wall++, array);
+      if (array[i] < pivot) {
+        swap(i, wall++, array);
       }
     }
+    swap(end, wall, array);
+    sort(start, wall - 1);
+    sort(wall + 1, end);
   }
 
   sort(0, array.length - 1);
