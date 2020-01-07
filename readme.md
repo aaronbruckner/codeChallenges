@@ -9,3 +9,6 @@ solutions to arcade and challenge problems.
 ## ProblemsByType
 This folder contains problems sorted by category. Each problem has original unit tests and
 solutions written by me.
+
+## Implementations
+Contains some TS implementations of fundamental CS constructs (sorting algorithms, min/max heaps, etc).
