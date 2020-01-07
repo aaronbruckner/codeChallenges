@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Contains my personal implementations to a variety of common CS objects in TS.",
   "scripts": {
+    "build": "npm run clean && npm test && npm run tsc",
     "tdd": "jest --watch",
     "tsc": "./node_modules/typescript/bin/tsc -p tsconfig.json",
     "clean": "rm -rf build",
@@ -11,8 +12,9 @@
   "author": "Aaron Bruckner",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^24.9.0",
     "@types/jest": "^24.0.25",
+    "@types/lodash": "^4.14.149",
+    "jest": "^24.9.0",
     "ts-jest": "^24.2.0",
     "typescript": "^3.7.4"
   },
