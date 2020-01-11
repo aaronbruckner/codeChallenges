@@ -1,11 +1,13 @@
 import insertionSort from '../insertionSort';
 import mergeSort from '../mergeSort'
+import heapSort from '../heapSort';
 import * as _ from 'lodash';
 
 describe('sorting', () => {
     const sortingAlgorithms = {
         insertionSort,
-        mergeSort
+        mergeSort,
+        heapSort
     };
     
     Object.keys(sortingAlgorithms).forEach( name => {
