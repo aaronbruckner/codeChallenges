@@ -1,9 +1,11 @@
 import insertionSort from '../insertionSort';
+import mergeSort from '../mergeSort'
 import * as _ from 'lodash';
 
 describe('sorting', () => {
     const sortingAlgorithms = {
-        insertionSort
+        insertionSort,
+        mergeSort
     };
     
     Object.keys(sortingAlgorithms).forEach( name => {
@@ -24,6 +26,14 @@ describe('sorting', () => {
                 sort(array);
 
                 expect(array).toEqual([1]);
+            });
+
+            it('array with infinity values', () => {
+                const array = [1, 2, 3, 4, Infinity, -Infinity, Infinity, 8, -Infinity, 9, 5, Infinity, 6, Infinity, 7, -Infinity, 10];
+                
+                sort(array);
+
+                expect(array).toEqual([-Infinity, -Infinity, -Infinity, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, Infinity, Infinity, Infinity, Infinity]);
             });
 
             it('array filled with the same numbers', () => {
