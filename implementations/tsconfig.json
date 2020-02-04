@@ -2,12 +2,11 @@
     "compilerOptions": {
         "skipLibCheck": true,
         "target": "ES6",
-        "module": "es6",
+        "module": "CommonJS",
         "noImplicitAny": false,
         "removeComments": true,
         "preserveConstEnums": true,
         "sourceMap": true,
-        "sourceRoot": "src",
         "typeRoots": [
             "node_modules/@types"
         ],
