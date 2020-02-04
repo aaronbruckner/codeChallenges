@@ -1,0 +1,33 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558 
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Implementations tsc",
+            "type": "typescript",
+            "tsconfig": "implementations/tsconfig.json",
+            "problemMatcher": [
+                "$tsc"
+            ],
+            "group": "build"
+        },
+        {
+            "type": "npm",
+            "script": "build",
+            "path": "implementations/",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Echo vars",
+            "command": "echo",
+            "args": [
+              "${env:USERNAME}",
+              "workspaceFolder = ${workspaceFolder}",
+              "file = ${file}"
+            ],
+            "type": "shell"
+         }
+    ]
+}
