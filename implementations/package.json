@@ -33,6 +33,6 @@
   "dependencies": {
     "@types/async": "^3.0.3",
     "async": "^3.1.0",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.19"
   }
 }
